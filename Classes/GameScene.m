@@ -8,7 +8,7 @@
 
 
 // Import the interfaces
-#import "HelloWorldScene.h"
+#import "GameScene.h"
 
 enum {
 	kTagBatchNode = 1,
@@ -32,7 +32,7 @@ eachShape(void *ptr, void* unused)
 }
 
 // HelloWorld implementation
-@implementation HelloWorld
+@implementation GameLayer
 
 +(id) scene
 {
@@ -40,7 +40,7 @@ eachShape(void *ptr, void* unused)
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorld *layer = [HelloWorld node];
+	GameLayer *layer = [GameLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
