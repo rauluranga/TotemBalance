@@ -37,7 +37,7 @@
 			ccp(12.5,-24),		
 		};
 		
-		myBody = cpBodyNew(1.0f,cpMomentForPoly(1.0, num, verts, CGPointZero));
+		myBody = cpBodyNew(1.0f,cpMomentForPoly(1.0f, num, verts, CGPointZero));
 		myBody->p = pos;
 		myBody->data = self;
 		
