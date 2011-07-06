@@ -9,6 +9,9 @@
 
 // Import the interfaces
 #import "GameScene.h"
+#import "BlockRectangle.h"
+#import "BlockTriangle.h"
+#import "BlockCircle.h"
 
 enum {
 	kTagBatchNode = 1,
@@ -38,7 +41,13 @@ eachShape(void *ptr, void* unused)
 @synthesize goal;
 @synthesize totem;
 @synthesize space;
+@synthesize touchableBlocks;
 
+-(void) dealloc
+{
+	[touchableBlocks release];
+	[super dealloc];
+}
 
 +(id) scene
 {
@@ -124,6 +133,25 @@ eachShape(void *ptr, void* unused)
 		
 		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
 		goal = [[Goal alloc] initWithPosition:ccp(160,25) theGame:self];
+		
+		touchableBlocks = [[NSMutableArray alloc] init];
+		for (int i = 0; i<5; i++) {
+			BlockRectangle * b = [[BlockRectangle alloc] initWithPosition:ccp(160,50 + 50 * i) theGame:self];
+			[touchableBlocks addObject:b];
+			[b release];
+		}
+		
+		for (int i = 0; i<5; i++) {
+			BlockTriangle * b = [[BlockTriangle alloc] initWithPosition:ccp(80,50 + 50 * i) theGame:self];
+			[touchableBlocks addObject:b];
+			[b release];
+		}
+		
+		for (int i = 0; i<5; i++) {
+			BlockCircle * b = [[BlockCircle alloc] initWithPosition:ccp(240 + 10 * i,50 + 50 * i) theGame:self];
+			[touchableBlocks addObject:b];
+			[b release];
+		}
 		
 		/*/
 		// top
