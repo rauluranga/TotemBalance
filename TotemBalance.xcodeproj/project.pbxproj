@@ -71,6 +71,9 @@
 		C4D9472913C4EA3900EF4937 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9472813C4EA3900EF4937 /* Goal.m */; };
 		C4D9473113C4EB2000EF4937 /* goal.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9473013C4EB2000EF4937 /* goal.png */; };
 		C4D9475613C4ECBD00EF4937 /* TouchableBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */; };
+		C4D9475F13C4EE5C00EF4937 /* BlockRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */; };
+		C4D9476213C4EE6700EF4937 /* BlockTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9476113C4EE6700EF4937 /* BlockTriangle.m */; };
+		C4D9476513C4EE7200EF4937 /* BlockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9476413C4EE7200EF4937 /* BlockCircle.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -386,6 +389,12 @@
 		C4D9473013C4EB2000EF4937 /* goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goal.png; sourceTree = "<group>"; };
 		C4D9475413C4ECBD00EF4937 /* TouchableBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableBlock.h; sourceTree = "<group>"; };
 		C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableBlock.m; sourceTree = "<group>"; };
+		C4D9475D13C4EE5C00EF4937 /* BlockRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockRectangle.h; sourceTree = "<group>"; };
+		C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockRectangle.m; sourceTree = "<group>"; };
+		C4D9476013C4EE6700EF4937 /* BlockTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTriangle.h; sourceTree = "<group>"; };
+		C4D9476113C4EE6700EF4937 /* BlockTriangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTriangle.m; sourceTree = "<group>"; };
+		C4D9476313C4EE7200EF4937 /* BlockCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCircle.h; sourceTree = "<group>"; };
+		C4D9476413C4EE7200EF4937 /* BlockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCircle.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -727,6 +736,12 @@
 				C4D9472813C4EA3900EF4937 /* Goal.m */,
 				C4D9475413C4ECBD00EF4937 /* TouchableBlock.h */,
 				C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */,
+				C4D9475D13C4EE5C00EF4937 /* BlockRectangle.h */,
+				C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */,
+				C4D9476013C4EE6700EF4937 /* BlockTriangle.h */,
+				C4D9476113C4EE6700EF4937 /* BlockTriangle.m */,
+				C4D9476313C4EE7200EF4937 /* BlockCircle.h */,
+				C4D9476413C4EE7200EF4937 /* BlockCircle.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1410,6 +1425,9 @@
 				C4D946E713C4E26D00EF4937 /* Totem.m in Sources */,
 				C4D9472913C4EA3900EF4937 /* Goal.m in Sources */,
 				C4D9475613C4ECBD00EF4937 /* TouchableBlock.m in Sources */,
+				C4D9475F13C4EE5C00EF4937 /* BlockRectangle.m in Sources */,
+				C4D9476213C4EE6700EF4937 /* BlockTriangle.m in Sources */,
+				C4D9476513C4EE7200EF4937 /* BlockCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
