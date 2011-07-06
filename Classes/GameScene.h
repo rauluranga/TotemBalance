@@ -12,14 +12,17 @@
 // Importing Chipmunk headers
 #import "chipmunk.h"
 #import "Totem.h"
+#import "Goal.h"
 
 // HelloWorld Layer
 @interface GameLayer : CCLayer
 {
 	cpSpace *space;
 	Totem *totem;
+	Goal *goal;
 }
 
+@property (nonatomic, retain) Goal *goal;
 @property (nonatomic, retain) Totem *totem;
 @property (nonatomic, readwrite) cpSpace *space;
 
