@@ -21,6 +21,6 @@
 // returns a Scene that contains the HelloWorld as the only child
 +(id) scene;
 -(void) step: (ccTime) dt;
--(void) addNewSpriteX:(float)x y:(float)y;
+//-(void) addNewSpriteX:(float)x y:(float)y;
 
 @end

@@ -49,7 +49,7 @@ eachShape(void *ptr, void* unused)
 	return scene;
 }
 
-
+/*/
 -(void) addNewSpriteX: (float)x y:(float)y
 {
 	int posx, posy;
@@ -89,6 +89,8 @@ eachShape(void *ptr, void* unused)
 	cpSpaceAddShape(space, shape);
 	
 }
+//*/
+
 -(id) init
 {
 	if( (self=[super init])) {
@@ -104,7 +106,7 @@ eachShape(void *ptr, void* unused)
 		cpSpaceResizeStaticHash(space, 400.0f, 40);
 		cpSpaceResizeActiveHash(space, 100, 600);
 		
-		space->gravity = ccp(0, 0);
+		space->gravity = ccp(0, -200);
 		space->elasticIterations = space->iterations;
 		
 		cpShape *shape;
@@ -132,7 +134,7 @@ eachShape(void *ptr, void* unused)
 		CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
 		[self addChild:batch z:0 tag:kTagBatchNode];
 		
-		[self addNewSpriteX: 200 y:200];
+		//[self addNewSpriteX: 200 y:200];
 		
 		[self schedule: @selector(step:)];
 	}
@@ -162,6 +164,7 @@ eachShape(void *ptr, void* unused)
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	/*/
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		
@@ -169,10 +172,12 @@ eachShape(void *ptr, void* unused)
 		
 		[self addNewSpriteX: location.x y:location.y];
 	}
+	//*/
 }
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {	
+	/*/
 	static float prevX=0, prevY=0;
 	
 #define kFilterFactor 0.05f
@@ -186,5 +191,6 @@ eachShape(void *ptr, void* unused)
 	CGPoint v = ccp( accelX, accelY);
 	
 	space->gravity = ccpMult(v, 200);
+	//*/
 }
 @end
