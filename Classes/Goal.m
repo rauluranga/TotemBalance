@@ -1,16 +1,15 @@
 //
-//  Totem.m
+//  Goal.m
 //  TotemBalance
 //
 //  Created by Raúl Uranga on 7/6/11.
 //  Copyright 2011 GrupoW. All rights reserved.
 //
 
-#import "Totem.h"
+#import "Goal.h"
 #import "GameScene.h"
 
-
-@implementation Totem
+@implementation Goal
 
 @synthesize mySprite;
 @synthesize theGame;
@@ -23,7 +22,7 @@
 		self.theGame = game;
 		[game addChild:self z:1];
 		
-		mySprite = [CCSprite spriteWithFile:@"totem.png"];
+		mySprite = [CCSprite spriteWithFile:@"goal.png"];
 		[mySprite setPosition:pos];
 		
 		[game addChild:mySprite z:1];
@@ -31,10 +30,10 @@
 		int num = 4;
 		CGPoint verts[] = 
 		{
-			ccp(-12.5,-24),
-			ccp(-12.5,24),
-			ccp(12.5,24),
-			ccp(12.5,-24),		
+			ccp(-55.5,-13.5),
+			ccp(-55.5,13.5),
+			ccp(55.5,13.5),
+			ccp(55.5,-13.5),		
 		};
 		
 		myBody = cpBodyNew(1.0f,cpMomentForPoly(1.0f, num, verts, CGPointZero));
@@ -47,8 +46,8 @@
 		myShape->e = 0.5;
 		myShape->u = 0.5;
 		myShape->data = mySprite;
-		myShape->group = 1;
-		myShape->collision_type = 1;
+		myShape->group = 4;
+		myShape->collision_type = 4;
 		
 		cpSpaceAddShape(game.space, myShape);
 		
@@ -56,5 +55,6 @@
 	
 	return self;
 }
+
 
 @end

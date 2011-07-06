@@ -35,6 +35,7 @@ eachShape(void *ptr, void* unused)
 @implementation GameLayer
 
 
+@synthesize goal;
 @synthesize totem;
 @synthesize space;
 
@@ -122,6 +123,7 @@ eachShape(void *ptr, void* unused)
 		cpSpaceAddStaticShape(space, shape);
 		
 		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
+		goal = [[Goal alloc] initWithPosition:ccp(160,25) theGame:self];
 		
 		/*/
 		// top
