@@ -34,6 +34,11 @@ eachShape(void *ptr, void* unused)
 // HelloWorld implementation
 @implementation GameLayer
 
+
+@synthesize totem;
+@synthesize space;
+
+
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -115,6 +120,9 @@ eachShape(void *ptr, void* unused)
 		shape = cpSegmentShapeNew(staticBody, ccp(0,0), ccp(wins.width,0), 0.0f);
 		shape->e = 1.0f; shape->u = 1.0f;
 		cpSpaceAddStaticShape(space, shape);
+		
+		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
+		
 		/*/
 		// top
 		shape = cpSegmentShapeNew(staticBody, ccp(0,wins.height), ccp(wins.width,wins.height), 0.0f);

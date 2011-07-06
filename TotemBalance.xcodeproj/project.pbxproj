@@ -66,6 +66,8 @@
 		50F4144910692EE7002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F4144410692EE7002A0D5E /* Default.png */; };
 		50F4144A10692EE7002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F4144510692EE7002A0D5E /* fps_images.png */; };
 		50F4144B10692EE7002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F4144610692EE7002A0D5E /* Icon.png */; };
+		C4D946E713C4E26D00EF4937 /* Totem.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D946E613C4E26D00EF4937 /* Totem.m */; };
+		C4D946F713C4E61D00EF4937 /* totem.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D946F613C4E61D00EF4937 /* totem.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -373,6 +375,9 @@
 		50F4144510692EE7002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F4144610692EE7002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F4144710692EE7002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D946E513C4E26D00EF4937 /* Totem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Totem.h; sourceTree = "<group>"; };
+		C4D946E613C4E26D00EF4937 /* Totem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Totem.m; sourceTree = "<group>"; };
+		C4D946F613C4E61D00EF4937 /* totem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totem.png; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -708,6 +713,8 @@
 				E0F81037120A173C005866B8 /* RootViewController.m */,
 				1F3B9A2C0EF2145700286867 /* TotemBalanceAppDelegate.h */,
 				507022A2107672FA00393637 /* TotemBalanceAppDelegate.m */,
+				C4D946E513C4E26D00EF4937 /* Totem.h */,
+				C4D946E613C4E26D00EF4937 /* Totem.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -828,6 +835,7 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C4D946F613C4E61D00EF4937 /* totem.png */,
 				E02BBA1F126CC2CC006E46A2 /* iTunesArtwork */,
 				E02BB51B126CA588006E46A2 /* Icon@2x.png */,
 				E02BB51C126CA588006E46A2 /* Icon-Small@2x.png */,
@@ -1370,6 +1378,7 @@
 				E02BB524126CA588006E46A2 /* Icon-Small-50.png in Resources */,
 				E02BB525126CA588006E46A2 /* Icon-72.png in Resources */,
 				E02BBA20126CC2CC006E46A2 /* iTunesArtwork in Resources */,
+				C4D946F713C4E61D00EF4937 /* totem.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,6 +1393,7 @@
 				507022A4107672FA00393637 /* TotemBalanceAppDelegate.m in Sources */,
 				507022A5107672FA00393637 /* GameScene.m in Sources */,
 				E0F81038120A173C005866B8 /* RootViewController.m in Sources */,
+				C4D946E713C4E26D00EF4937 /* Totem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

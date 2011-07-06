@@ -11,12 +11,20 @@
 
 // Importing Chipmunk headers
 #import "chipmunk.h"
+#import "Totem.h"
 
 // HelloWorld Layer
 @interface GameLayer : CCLayer
 {
 	cpSpace *space;
+	Totem *totem;
 }
+
+@property (nonatomic, retain) Totem *totem;
+@property (nonatomic, readwrite) cpSpace *space;
+
+
+
 
 // returns a Scene that contains the HelloWorld as the only child
 +(id) scene;
