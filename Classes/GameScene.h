@@ -20,11 +20,13 @@
 	cpSpace *space;
 	Totem *totem;
 	Goal *goal;
+	NSMutableArray *touchableBlocks;
 }
 
 @property (nonatomic, retain) Goal *goal;
 @property (nonatomic, retain) Totem *totem;
 @property (nonatomic, readwrite) cpSpace *space;
+@property (nonatomic, retain) NSMutableArray *touchableBlocks;
 
 
 

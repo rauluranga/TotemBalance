@@ -70,6 +70,13 @@
 		C4D946F713C4E61D00EF4937 /* totem.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D946F613C4E61D00EF4937 /* totem.png */; };
 		C4D9472913C4EA3900EF4937 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9472813C4EA3900EF4937 /* Goal.m */; };
 		C4D9473113C4EB2000EF4937 /* goal.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9473013C4EB2000EF4937 /* goal.png */; };
+		C4D9475613C4ECBD00EF4937 /* TouchableBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */; };
+		C4D9475F13C4EE5C00EF4937 /* BlockRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */; };
+		C4D9476213C4EE6700EF4937 /* BlockTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9476113C4EE6700EF4937 /* BlockTriangle.m */; };
+		C4D9476513C4EE7200EF4937 /* BlockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D9476413C4EE7200EF4937 /* BlockCircle.m */; };
+		C4D9477313C4F0BB00EF4937 /* block_circ.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9477013C4F0BB00EF4937 /* block_circ.png */; };
+		C4D9477413C4F0BB00EF4937 /* block_rect.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9477113C4F0BB00EF4937 /* block_rect.png */; };
+		C4D9477513C4F0BB00EF4937 /* block_tri.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D9477213C4F0BB00EF4937 /* block_tri.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -383,6 +390,17 @@
 		C4D9472713C4EA3900EF4937 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		C4D9472813C4EA3900EF4937 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		C4D9473013C4EB2000EF4937 /* goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goal.png; sourceTree = "<group>"; };
+		C4D9475413C4ECBD00EF4937 /* TouchableBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableBlock.h; sourceTree = "<group>"; };
+		C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableBlock.m; sourceTree = "<group>"; };
+		C4D9475D13C4EE5C00EF4937 /* BlockRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockRectangle.h; sourceTree = "<group>"; };
+		C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockRectangle.m; sourceTree = "<group>"; };
+		C4D9476013C4EE6700EF4937 /* BlockTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTriangle.h; sourceTree = "<group>"; };
+		C4D9476113C4EE6700EF4937 /* BlockTriangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTriangle.m; sourceTree = "<group>"; };
+		C4D9476313C4EE7200EF4937 /* BlockCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCircle.h; sourceTree = "<group>"; };
+		C4D9476413C4EE7200EF4937 /* BlockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockCircle.m; sourceTree = "<group>"; };
+		C4D9477013C4F0BB00EF4937 /* block_circ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block_circ.png; sourceTree = "<group>"; };
+		C4D9477113C4F0BB00EF4937 /* block_rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block_rect.png; sourceTree = "<group>"; };
+		C4D9477213C4F0BB00EF4937 /* block_tri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block_tri.png; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -711,6 +729,9 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C4D9477013C4F0BB00EF4937 /* block_circ.png */,
+				C4D9477113C4F0BB00EF4937 /* block_rect.png */,
+				C4D9477213C4F0BB00EF4937 /* block_tri.png */,
 				E0F81035120A173C005866B8 /* GameConfig.h */,
 				507022A3107672FA00393637 /* GameScene.m */,
 				506EDC2F102F528A00A389B3 /* GameScene.h */,
@@ -722,6 +743,14 @@
 				C4D946E613C4E26D00EF4937 /* Totem.m */,
 				C4D9472713C4EA3900EF4937 /* Goal.h */,
 				C4D9472813C4EA3900EF4937 /* Goal.m */,
+				C4D9475413C4ECBD00EF4937 /* TouchableBlock.h */,
+				C4D9475513C4ECBD00EF4937 /* TouchableBlock.m */,
+				C4D9475D13C4EE5C00EF4937 /* BlockRectangle.h */,
+				C4D9475E13C4EE5C00EF4937 /* BlockRectangle.m */,
+				C4D9476013C4EE6700EF4937 /* BlockTriangle.h */,
+				C4D9476113C4EE6700EF4937 /* BlockTriangle.m */,
+				C4D9476313C4EE7200EF4937 /* BlockCircle.h */,
+				C4D9476413C4EE7200EF4937 /* BlockCircle.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1388,6 +1417,9 @@
 				E02BBA20126CC2CC006E46A2 /* iTunesArtwork in Resources */,
 				C4D946F713C4E61D00EF4937 /* totem.png in Resources */,
 				C4D9473113C4EB2000EF4937 /* goal.png in Resources */,
+				C4D9477313C4F0BB00EF4937 /* block_circ.png in Resources */,
+				C4D9477413C4F0BB00EF4937 /* block_rect.png in Resources */,
+				C4D9477513C4F0BB00EF4937 /* block_tri.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,6 +1436,10 @@
 				E0F81038120A173C005866B8 /* RootViewController.m in Sources */,
 				C4D946E713C4E26D00EF4937 /* Totem.m in Sources */,
 				C4D9472913C4EA3900EF4937 /* Goal.m in Sources */,
+				C4D9475613C4ECBD00EF4937 /* TouchableBlock.m in Sources */,
+				C4D9475F13C4EE5C00EF4937 /* BlockRectangle.m in Sources */,
+				C4D9476213C4EE6700EF4937 /* BlockTriangle.m in Sources */,
+				C4D9476513C4EE7200EF4937 /* BlockCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
