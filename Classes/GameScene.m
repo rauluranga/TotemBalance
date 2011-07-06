@@ -115,7 +115,7 @@ eachShape(void *ptr, void* unused)
 		shape = cpSegmentShapeNew(staticBody, ccp(0,0), ccp(wins.width,0), 0.0f);
 		shape->e = 1.0f; shape->u = 1.0f;
 		cpSpaceAddStaticShape(space, shape);
-		
+		/*/
 		// top
 		shape = cpSegmentShapeNew(staticBody, ccp(0,wins.height), ccp(wins.width,wins.height), 0.0f);
 		shape->e = 1.0f; shape->u = 1.0f;
@@ -130,7 +130,7 @@ eachShape(void *ptr, void* unused)
 		shape = cpSegmentShapeNew(staticBody, ccp(wins.width,0), ccp(wins.width,wins.height), 0.0f);
 		shape->e = 1.0f; shape->u = 1.0f;
 		cpSpaceAddStaticShape(space, shape);
-		
+		//*/
 		CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
 		[self addChild:batch z:0 tag:kTagBatchNode];
 		
