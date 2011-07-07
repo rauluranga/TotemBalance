@@ -10,7 +10,7 @@
 
 #import "TotemBalanceAppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldScene.h"
+#import "GameScene.h"
 #import "RootViewController.h"
 
 @implementation TotemBalanceAppDelegate
@@ -111,7 +111,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];		
+	[[CCDirector sharedDirector] runWithScene: [GameLayer scene]];		
 }
 
 
