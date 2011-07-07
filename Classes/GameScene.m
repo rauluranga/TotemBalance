@@ -34,6 +34,23 @@ eachShape(void *ptr, void* unused)
 	}
 }
 
+
+static int
+loseGame(cpArbiter *arb, cpSpace *space, void *data)
+{
+	CP_ARBITER_GET_SHAPES(arb,a,b);
+	
+	Totem *t = (Totem *) a->body->data;
+	
+	GameLayer *game = (GameLayer *) data;
+	
+	CCScene *gs = [GameLayer scene];
+	[[CCDirector sharedDirector] replaceScene:gs];
+	
+	return 0;
+}
+
+
 // HelloWorld implementation
 @implementation GameLayer
 
@@ -129,6 +146,7 @@ eachShape(void *ptr, void* unused)
 		// bottom
 		shape = cpSegmentShapeNew(staticBody, ccp(0,0), ccp(wins.width,0), 0.0f);
 		shape->e = 1.0f; shape->u = 1.0f;
+		shape->collision_type = 2;
 		cpSpaceAddStaticShape(space, shape);
 		
 		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
@@ -169,10 +187,15 @@ eachShape(void *ptr, void* unused)
 		shape->e = 1.0f; shape->u = 1.0f;
 		cpSpaceAddStaticShape(space, shape);
 		//*/
-		CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
-		[self addChild:batch z:0 tag:kTagBatchNode];
+		
+		//CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
+		//[self addChild:batch z:0 tag:kTagBatchNode];
 		
 		//[self addNewSpriteX: 200 y:200];
+		
+		
+		cpSpaceAddCollisionHandler(space, 1, 2, NULL, loseGame, NULL, NULL, self);
+		
 		
 		[self schedule: @selector(step:)];
 	}
