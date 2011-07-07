@@ -40,14 +40,49 @@ loseGame(cpArbiter *arb, cpSpace *space, void *data)
 {
 	CP_ARBITER_GET_SHAPES(arb,a,b);
 	
+	//The above macro "generates" 2 structs for us (a and b) which are the 2 shapes that collided.
+	//We can retrieve their bodies from them and then their "data"	
+	//property which we set to be the actual instance of the class.
+	
 	Totem *t = (Totem *) a->body->data;
 	
 	GameLayer *game = (GameLayer *) data;
+	
+	//We know the "a" struct will always represent the Totem
+	//and the struct "b" will always represent the Goal
+	//because that is the order we pass those 2 object's groups
+	//in the cpSpaceCollisionHandler function.
 	
 	CCScene *gs = [GameLayer scene];
 	[[CCDirector sharedDirector] replaceScene:gs];
 	
 	return 0;
+}
+
+static int
+startCounting(cpArbiter *arb, cpSpace *space, void *data)
+{
+	CP_ARBITER_GET_SHAPES(arb,a,b);
+	
+	GameLayer *game = (GameLayer *) data;
+	
+	[game schedule:@selector(winCount) interval:1];
+	
+	return 1;
+}
+
+static int
+stopCounting(cpArbiter *arb, cpSpace *space, void *data)
+{
+	CP_ARBITER_GET_SHAPES(arb,a,b);
+	
+	GameLayer *game = (GameLayer *) data;
+	
+	[game unschedule:@selector(winCount)];
+	
+	game.secondsForGoal = 0;
+	
+	NSLog(@"SEPARATED");
 }
 
 
@@ -59,6 +94,7 @@ loseGame(cpArbiter *arb, cpSpace *space, void *data)
 @synthesize totem;
 @synthesize space;
 @synthesize touchableBlocks;
+@synthesize secondsForGoal;
 
 -(void) dealloc
 {
@@ -195,6 +231,7 @@ loseGame(cpArbiter *arb, cpSpace *space, void *data)
 		
 		
 		cpSpaceAddCollisionHandler(space, 1, 2, NULL, loseGame, NULL, NULL, self);
+		cpSpaceAddCollisionHandler(space, 1, 4, startCounting, NULL, NULL, stopCounting, self);
 		
 		
 		[self schedule: @selector(step:)];
@@ -254,4 +291,18 @@ loseGame(cpArbiter *arb, cpSpace *space, void *data)
 	space->gravity = ccpMult(v, 200);
 	//*/
 }
+
+-(void) winCount
+{
+	secondsForGoal ++;
+	NSLog(@"Seconds passed: %d", secondsForGoal);
+	
+	if (secondsForGoal > 5) {
+		NSLog(@"WON!!!");
+		[self unschedule:@selector(winCount)];
+		secondsForGoal = 0;
+	}
+}
+
+
 @end
