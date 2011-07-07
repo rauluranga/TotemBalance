@@ -40,6 +40,14 @@
 	return c;
 }
 
+- (BOOL)containsTouchLocation:(UITouch *)touch
+{
+	return CGRectContainsPoint(self.rect, [self convertTouchToNodeSpaceAR:touch]);
+}
+
+#pragma mark-
+#pragma mark added/removed handlers
+
 -(void) onEnter
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -52,10 +60,8 @@
 	[super onExit];
 }
 
-- (BOOL)containsTouchLocation:(UITouch *)touch
-{
-	return CGRectContainsPoint(self.rect, [self convertTouchToNodeSpaceAR:touch]);
-}
+#pragma mark-
+#pragma mark touches handlers
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
@@ -96,22 +102,5 @@
 	state = kStateUngrabbed;
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end
