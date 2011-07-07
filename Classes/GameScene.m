@@ -44,9 +44,9 @@ loseGame(cpArbiter *arb, cpSpace *space, void *data)
 	//We can retrieve their bodies from them and then their "data"	
 	//property which we set to be the actual instance of the class.
 	
-	Totem *t = (Totem *) a->body->data;
+	//Totem *t = (Totem *) a->body->data;
 	
-	GameLayer *game = (GameLayer *) data;
+	//GameLayer *game = (GameLayer *) data;
 	
 	//We know the "a" struct will always represent the Totem
 	//and the struct "b" will always represent the Goal
@@ -71,9 +71,10 @@ startCounting(cpArbiter *arb, cpSpace *space, void *data)
 	return 1;
 }
 
-static int
+static void
 stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 {
+	
 	CP_ARBITER_GET_SHAPES(arb,a,b);
 	
 	GameLayer *game = (GameLayer *) data;
@@ -83,6 +84,7 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	game.secondsForGoal = 0;
 	
 	NSLog(@"SEPARATED");
+	
 }
 
 
@@ -117,48 +119,6 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	return scene;
 }
 
-/*/
--(void) addNewSpriteX: (float)x y:(float)y
-{
-	int posx, posy;
-	
-	CCSpriteBatchNode *batch = (CCSpriteBatchNode*) [self getChildByTag:kTagBatchNode];
-	
-	posx = (CCRANDOM_0_1() * 200);
-	posy = (CCRANDOM_0_1() * 200);
-	
-	posx = (posx % 4) * 85;
-	posy = (posy % 3) * 121;
-	
-	CCSprite *sprite = [CCSprite spriteWithBatchNode:batch rect:CGRectMake(posx, posy, 85, 121)];
-	[batch addChild: sprite];
-	
-	sprite.position = ccp(x,y);
-	
-	int num = 4;
-	CGPoint verts[] = {
-		ccp(-24,-54),
-		ccp(-24, 54),
-		ccp( 24, 54),
-		ccp( 24,-54),
-	};
-	
-	cpBody *body = cpBodyNew(1.0f, cpMomentForPoly(1.0f, num, verts, CGPointZero));
-	
-	// TIP:
-	// since v0.7.1 you can assign CGPoint to chipmunk instead of cpVect.
-	// cpVect == CGPoint
-	body->p = ccp(x, y);
-	cpSpaceAddBody(space, body);
-	
-	cpShape* shape = cpPolyShapeNew(body, num, verts, CGPointZero);
-	shape->e = 0.5f; shape->u = 0.5f;
-	shape->data = sprite;
-	cpSpaceAddShape(space, shape);
-	
-}
-//*/
-
 -(id) init
 {
 	if( (self=[super init])) {
@@ -167,6 +127,7 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		self.isAccelerometerEnabled = YES;
 		
 		CGSize wins = [[CCDirector sharedDirector] winSize];
+		
 		cpInitChipmunk();
 		
 		cpBody *staticBody = cpBodyNew(INFINITY, INFINITY);
@@ -186,6 +147,7 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		cpSpaceAddStaticShape(space, shape);
 		
 		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
+		
 		goal = [[Goal alloc] initWithPosition:ccp(160,25) theGame:self];
 		
 		touchableBlocks = [[NSMutableArray alloc] init];
@@ -207,30 +169,9 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 			[b release];
 		}
 		
-		/*/
-		// top
-		shape = cpSegmentShapeNew(staticBody, ccp(0,wins.height), ccp(wins.width,wins.height), 0.0f);
-		shape->e = 1.0f; shape->u = 1.0f;
-		cpSpaceAddStaticShape(space, shape);
-		
-		// left
-		shape = cpSegmentShapeNew(staticBody, ccp(0,0), ccp(0,wins.height), 0.0f);
-		shape->e = 1.0f; shape->u = 1.0f;
-		cpSpaceAddStaticShape(space, shape);
-		
-		// right
-		shape = cpSegmentShapeNew(staticBody, ccp(wins.width,0), ccp(wins.width,wins.height), 0.0f);
-		shape->e = 1.0f; shape->u = 1.0f;
-		cpSpaceAddStaticShape(space, shape);
-		//*/
-		
-		//CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
-		//[self addChild:batch z:0 tag:kTagBatchNode];
-		
-		//[self addNewSpriteX: 200 y:200];
-		
 		
 		cpSpaceAddCollisionHandler(space, 1, 2, NULL, loseGame, NULL, NULL, self);
+		
 		cpSpaceAddCollisionHandler(space, 1, 4, startCounting, NULL, NULL, stopCounting, self);
 		
 		
@@ -243,8 +184,6 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 -(void) onEnter
 {
 	[super onEnter];
-	
-	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
 }
 
 -(void) step: (ccTime) delta
@@ -259,42 +198,10 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	cpSpaceHashEach(space->staticShapes, &eachShape, nil);
 }
 
-
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	/*/
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-		
-		[self addNewSpriteX: location.x y:location.y];
-	}
-	//*/
-}
-
-- (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
-{	
-	/*/
-	static float prevX=0, prevY=0;
-	
-#define kFilterFactor 0.05f
-	
-	float accelX = (float) acceleration.x * kFilterFactor + (1- kFilterFactor)*prevX;
-	float accelY = (float) acceleration.y * kFilterFactor + (1- kFilterFactor)*prevY;
-	
-	prevX = accelX;
-	prevY = accelY;
-	
-	CGPoint v = ccp( accelX, accelY);
-	
-	space->gravity = ccpMult(v, 200);
-	//*/
-}
-
 -(void) winCount
 {
 	secondsForGoal ++;
+	
 	NSLog(@"Seconds passed: %d", secondsForGoal);
 	
 	if (secondsForGoal > 5) {
