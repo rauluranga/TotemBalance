@@ -23,6 +23,7 @@
 	Goal *goal;
 	NSMutableArray *touchableBlocks;
 	int secondsForGoal;
+	int timePassed;
 }
 
 @property (nonatomic, retain) Goal *goal;

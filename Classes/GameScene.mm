@@ -12,6 +12,7 @@
 #import "BlockRectangle.h"
 #import "BlockTriangle.h"
 #import "BlockCircle.h"
+#import "OFHighScoreService.h"
 
 enum {
 	kTagBatchNode = 1,
@@ -179,6 +180,8 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		
 		
 		[self initializeOpenfeint];
+		
+		[self schedule:@selector(countTimePassed) interval:1];
 	}
 	
 	return self;
@@ -209,9 +212,22 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	
 	if (secondsForGoal > 5) {
 		NSLog(@"WON!!!");
+		
 		[self unschedule:@selector(winCount)];
+		
 		secondsForGoal = 0;
+		
+		[OFHighScoreService setHighScore:timePassed forLeaderboard:@"823036" onSuccess:OFDelegate() onFailure:OFDelegate()];
+		
+		[self unschedule:@selector(countTimePassed)];
+		
 	}
+}
+
+
+-(void) countTimePassed
+{
+	timePassed++;
 }
 
 
