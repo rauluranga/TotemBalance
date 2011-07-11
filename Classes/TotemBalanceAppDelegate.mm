@@ -12,6 +12,7 @@
 #import "GameConfig.h"
 #import "GameScene.h"
 #import "RootViewController.h"
+#import "Openfeint.h"
 
 @implementation TotemBalanceAppDelegate
 
@@ -117,10 +118,14 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] pause];
+	//[Note that these are not necessary with OpenFeint 2.10 and will cause errors if used.]
+	//[OpenFeint applicationWillResignActive];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] resume];
+	//[Note that these are not necessary with OpenFeint 2.10 and will cause errors if used.]
+	//[OpenFeint applicationDidBecomeActive];
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
@@ -129,10 +134,14 @@
 
 -(void) applicationDidEnterBackground:(UIApplication*)application {
 	[[CCDirector sharedDirector] stopAnimation];
+	//[Note that these are not necessary with OpenFeint 2.10 and will cause errors if used.]
+	//[OpenFeint applicationDidEnterBackground];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application {
 	[[CCDirector sharedDirector] startAnimation];
+	//[Note that these are not necessary with OpenFeint 2.10 and will cause errors if used.]
+	//[OpenFeint applicationWillEnterForeground];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

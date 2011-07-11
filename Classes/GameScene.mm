@@ -176,6 +176,9 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		
 		
 		[self schedule: @selector(step:)];
+		
+		
+		[self initializeOpenfeint];
 	}
 	
 	return self;
@@ -210,6 +213,41 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		secondsForGoal = 0;
 	}
 }
+
+
+-(void) initializeOpenfeint
+{
+	NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:UIInterfaceOrientationPortrait], OpenFeintSettingDashboardOrientation,
+							  @"Totem",OpenFeintSettingShortDisplayName,
+							  [NSNumber numberWithBool:YES], OpenFeintSettingEnablePushNotifications,
+							  [NSNumber numberWithBool:YES], OpenFeintSettingDisableUserGeneratedContent, nil];
+	
+	
+	[OpenFeint initializeWithProductKey:@"8LvOxAOfgry5CEUrOvxuIg" andSecret:@"9OOQgb6W4p5TNbX36Z6DQvjahdo4qYzju9rcciQmhs" andDisplayName:@"Totem" andSettings:settings andDelegates:
+	 [OFDelegatesContainer containerWithOpenFeintDelegate:self andChallengeDelegate:nil andNotificationDelegate:self]];
+	
+	[OpenFeint launchDashboard];
+}
+
+
+-(void) dashboardWillAppear
+{
+	[[CCDirector sharedDirector] pause];
+}
+
+
+-(void) dashboardDidDisappear
+{
+	[[CCDirector sharedDirector] resume];
+}
+
+
+
+
+
+
+
+
 
 
 @end
