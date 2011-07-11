@@ -939,7 +939,7 @@
 		C49479F813CB5E860077E6D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49479F713CB5E860077E6D1 /* SystemConfiguration.framework */; };
 		C49479FA13CB5E860077E6D1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C49479F913CB5E860077E6D1 /* libsqlite3.dylib */; };
 		C4947AA713CB631E0077E6D1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4947AA613CB631E0077E6D1 /* MobileCoreServices.framework */; };
-		C4947BA913CB73610077E6D1 /* openfeint_offline_config.xml in Resources */ = {isa = PBXBuildFile; fileRef = C4947BA813CB73610077E6D1 /* openfeint_offline_config.xml */; };
+		C4947BB913CB76B60077E6D1 /* openfeint_offline_config.xml in Resources */ = {isa = PBXBuildFile; fileRef = C4947BB813CB76B60077E6D1 /* openfeint_offline_config.xml */; };
 		C4D946E713C4E26D00EF4937 /* Totem.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4D946E613C4E26D00EF4937 /* Totem.mm */; };
 		C4D946F713C4E61D00EF4937 /* totem.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D946F613C4E61D00EF4937 /* totem.png */; };
 		C4D9472913C4EA3900EF4937 /* Goal.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4D9472813C4EA3900EF4937 /* Goal.mm */; };
@@ -2671,7 +2671,7 @@
 		C49479F713CB5E860077E6D1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C49479F913CB5E860077E6D1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C4947AA613CB631E0077E6D1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		C4947BA813CB73610077E6D1 /* openfeint_offline_config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = openfeint_offline_config.xml; sourceTree = "<group>"; };
+		C4947BB813CB76B60077E6D1 /* openfeint_offline_config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = openfeint_offline_config.xml; sourceTree = "<group>"; };
 		C4D946E513C4E26D00EF4937 /* Totem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Totem.h; sourceTree = "<group>"; };
 		C4D946E613C4E26D00EF4937 /* Totem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Totem.mm; sourceTree = "<group>"; };
 		C4D946F613C4E61D00EF4937 /* totem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totem.png; sourceTree = "<group>"; };
@@ -3181,7 +3181,7 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C4947BA813CB73610077E6D1 /* openfeint_offline_config.xml */,
+				C4947BB813CB76B60077E6D1 /* openfeint_offline_config.xml */,
 				C4D9477013C4F0BB00EF4937 /* block_circ.png */,
 				C4D9477113C4F0BB00EF4937 /* block_rect.png */,
 				C4D9477213C4F0BB00EF4937 /* block_tri.png */,
@@ -7353,7 +7353,7 @@
 				C494791F13CB5C320077E6D1 /* OFDashboardTabNowPlayingPortrait.png in Resources */,
 				C494792013CB5C320077E6D1 /* OFDashboardTabNowPlayingPortraitDisabled.png in Resources */,
 				C494792113CB5C320077E6D1 /* OFDashboardTabNowPlayingPortraitHit.png in Resources */,
-				C4947BA913CB73610077E6D1 /* openfeint_offline_config.xml in Resources */,
+				C4947BB913CB76B60077E6D1 /* openfeint_offline_config.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@
 +(id) scene;
 -(void) step: (ccTime) dt;
 -(void) initializeOpenfeint;
+-(void) checkRemainingBlocks;
 //-(void) addNewSpriteX:(float)x y:(float)y;
 
 @end

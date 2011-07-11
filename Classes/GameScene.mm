@@ -13,6 +13,8 @@
 #import "BlockTriangle.h"
 #import "BlockCircle.h"
 #import "OFHighScoreService.h"
+#import "OFAchievementService.h"
+#import "OFAchievement.h"
 
 enum {
 	kTagBatchNode = 1,
@@ -147,6 +149,17 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		shape->collision_type = 2;
 		cpSpaceAddStaticShape(space, shape);
 		
+		// left
+        shape = cpSegmentShapeNew(staticBody, ccp(0,0), ccp(0,wins.height), 0.0f);
+        shape->e = 1.0f; shape->u = 1.0f;
+        cpSpaceAddStaticShape(space, shape);
+		
+        // right
+        shape = cpSegmentShapeNew(staticBody, ccp(wins.width,0), ccp(wins.width,wins.height), 0.0f);
+        shape->e = 1.0f; shape->u = 1.0f;
+        cpSpaceAddStaticShape(space, shape);
+		
+		
 		totem = [[Totem alloc] initWithPosition:ccp(160,340) theGame:self];
 		
 		goal = [[Goal alloc] initWithPosition:ccp(160,25) theGame:self];
@@ -228,6 +241,25 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 -(void) countTimePassed
 {
 	timePassed++;
+}
+
+-(void) checkRemainingBlocks
+{
+	if ([touchableBlocks count] == 0) {
+		
+		//deprecated
+		//[OFAchievementService uunlockAchievement:@"1084202"];
+		
+		NSLog(@"unlocked Janitor Achievement!!!");
+		
+		//With OpenFeint SDK 2.7+ try:
+		//The following example shows how to unlock an achievement completely in one step without bothering to show a notification
+		//[[OFAchievement achievement: @"1084202"] updateProgressionComplete: 100.0f andShowNotification: YES];
+		[[OFAchievement achievement: @"1084202"] updateProgressionComplete: 100.0f andShowNotification: YES];
+		//[[OFAchievement achievement:@"1084202"] unlock];
+		
+
+	}
 }
 
 

@@ -10,11 +10,28 @@
   <name>TotemBalance</name>
   <is_owned_by_local_player>true</is_owned_by_local_player>
   <id>321172</id>
-  <timestamp>2011-07-11 18:04:49</timestamp>
+  <timestamp>2011-07-11 18:18:43</timestamp>
   <has_chat_rooms>false</has_chat_rooms>
 </game_profile_page_info>
 <offline>
-<timestamp>2011-07-11 18:04:49</timestamp>
+<timestamp>2011-07-11 18:18:43</timestamp>
+<achievements>
+<achievement>
+<id>1084202</id>
+<title>The Janitor</title>
+<description>Clean the building.</description>
+<gamerscore>200</gamerscore>
+<icon_url></icon_url>
+<is_secret>false</is_secret>
+<is_unlocked>false</is_unlocked>
+<percent_complete></percent_complete>
+<unlocked_date></unlocked_date>
+<position>1</position>
+<start_version>0000.00.00</start_version>
+<end_version>9999.99.99</end_version>
+<timestamp>2011-07-11 18:18:43</timestamp>
+</achievement>
+</achievements>
 <leaderboards>
 <leaderboard>
 <id>823036</id>
@@ -33,7 +50,7 @@
 <display_text></display_text>
 <custom_data></custom_data>
 <score></score>
-<timestamp>2011-07-11 18:04:49</timestamp>
+<timestamp>2011-07-11 18:18:43</timestamp>
 </leaderboard>
 </leaderboards>
 </offline>

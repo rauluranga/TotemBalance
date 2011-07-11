@@ -99,6 +99,8 @@
 	
 	[theGame.touchableBlocks removeObject:self];
 	
+	[theGame checkRemainingBlocks];
+	
 	state = kStateUngrabbed;
 	
 }
