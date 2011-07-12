@@ -13,7 +13,6 @@
 #import "BlockTriangle.h"
 #import "BlockCircle.h"
 #import "OFHighScoreService.h"
-#import "OFAchievementService.h"
 #import "OFAchievement.h"
 
 enum {
@@ -190,11 +189,20 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		
 		
 		[self schedule: @selector(step:)];
-		
-		
+
 		[self initializeOpenfeint];
 		
 		[self schedule:@selector(countTimePassed) interval:1];
+		
+		
+		CCMenuItemFont *newgame_item = [CCMenuItemFont itemFromString: @"SCORES" target:self selector:@selector(gameScores)];
+		
+		CCMenu *menu = [CCMenu menuWithItems:newgame_item,nil];
+		[menu setPosition:ccp(50,450)];
+		
+		[self addChild:menu];
+		
+		
 	}
 	
 	return self;
@@ -224,6 +232,7 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	NSLog(@"Seconds passed: %d", secondsForGoal);
 	
 	if (secondsForGoal > 5) {
+		
 		NSLog(@"WON!!!");
 		
 		[self unschedule:@selector(winCount)];
@@ -254,14 +263,19 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 		
 		//With OpenFeint SDK 2.7+ try:
 		//The following example shows how to unlock an achievement completely in one step without bothering to show a notification
-		//[[OFAchievement achievement: @"1084202"] updateProgressionComplete: 100.0f andShowNotification: YES];
 		[[OFAchievement achievement: @"1084202"] updateProgressionComplete: 100.0f andShowNotification: YES];
-		//[[OFAchievement achievement:@"1084202"] unlock];
 		
 
 	}
 }
 
+-(void) gameScores
+{
+	[OpenFeint launchDashboardWithHighscorePage:(NSString*)@"823036"];
+}
+
+#pragma mark-
+#pragma mark Openfeint handlers
 
 -(void) initializeOpenfeint
 {
@@ -272,9 +286,13 @@ stopCounting(cpArbiter *arb, cpSpace *space, void *data)
 	
 	
 	[OpenFeint initializeWithProductKey:@"8LvOxAOfgry5CEUrOvxuIg" andSecret:@"9OOQgb6W4p5TNbX36Z6DQvjahdo4qYzju9rcciQmhs" andDisplayName:@"Totem" andSettings:settings andDelegates:
-	 [OFDelegatesContainer containerWithOpenFeintDelegate:self andChallengeDelegate:nil andNotificationDelegate:self]];
+	[OFDelegatesContainer containerWithOpenFeintDelegate:self andChallengeDelegate:nil andNotificationDelegate:self]];
 	
-	[OpenFeint launchDashboard];
+	//[OpenFeint launchDashboard];
+	//[OpenFeint launchDashboardWithListLeaderboardsPage];
+	//OpenFeint.LaunchDashboard(OpenFeint.eDashboardPage.Leaderboards);
+	//[OpenFeint launchDashboardWithHighscorePage:(NSString*)@"823036"];
+
 }
 
 
