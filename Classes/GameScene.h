@@ -13,15 +13,17 @@
 #import "chipmunk.h"
 #import "Totem.h"
 #import "Goal.h"
+#import "Openfeint.h"
 
 // HelloWorld Layer
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer <OpenFeintDelegate, OFNotificationDelegate>
 {
 	cpSpace *space;
 	Totem *totem;
 	Goal *goal;
 	NSMutableArray *touchableBlocks;
 	int secondsForGoal;
+	int timePassed;
 }
 
 @property (nonatomic, retain) Goal *goal;
@@ -36,6 +38,9 @@
 // returns a Scene that contains the HelloWorld as the only child
 +(id) scene;
 -(void) step: (ccTime) dt;
+-(void) initializeOpenfeint;
+-(void) checkRemainingBlocks;
+-(void) gameScores;
 //-(void) addNewSpriteX:(float)x y:(float)y;
 
 @end
