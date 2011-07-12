@@ -40,6 +40,7 @@
 -(void) step: (ccTime) dt;
 -(void) initializeOpenfeint;
 -(void) checkRemainingBlocks;
+-(void) gameScores;
 //-(void) addNewSpriteX:(float)x y:(float)y;
 
 @end
